@@ -1,1 +1,4 @@
-
+1) Reverse a linked list.
+2) Write a C routine insertlist(start1,pos1,start2,pos2,n) to insert n elements of a single linked list(having starting node 
+    address as start2) beginning from pos2 into another linked list(having starting node address as start1) beginning from position pos1.
+3). concatenate(start1, start2) to concatenate two doubly linked list having starting addresses as start1 and start2.    
