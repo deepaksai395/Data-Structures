@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 20
+
+void push(int arr[MAX]);
+void pop(int arr[MAX]);
+void display(int arr[MAX]);
+int f=-1, r=-1;int value; int i;
+
+void  main()
+{ int  input; int arr[MAX];
+    printf("enter the choice\n");
+    printf("1.push\n2.pop\n3.exit");
+scanf("%d",&input);
+    while(input!=3){
+
+    switch(input)
+    {
+       case 1: push(arr); display(arr);  break;
+       case 2: pop(arr); display(arr); break;
+    }
+ printf("enter the choice\n");
+         scanf("%d",&input);
+    }
+}
+void push(int arr[MAX])
+{  if(r!=MAX-1){ printf("enter the value"); scanf("%d",&value);
+    if(f==-1){f=r=0;}
+    else{r=r+1;}
+    arr[r]=value;}
+    else{printf("Queue is overloaded");}
+
+}
+void pop(int arr[MAX])
+{
+    if(f!=-1){
+        if(f==r){
+            f=r=-1;
+        }
+        else{f=f+1;}
+    }
+    else{printf("first enter the queue");}
+
+}
+void display(int arr[MAX])
+{ printf("the queue is\n");
+    for(i=f;i<=r;i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+}
