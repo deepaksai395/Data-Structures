@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<conio.h>
+#include<stdbool.h>
+#define MAX 6
+bool isEmpty();
+bool isFull();
+void enqueue();
+int dequeue();
+void display();
+int rear=-1, front=0;
+int queue[MAX];
+void main()
+{ int option;
+    do{
+        printf("\nchoose your option\n");
+        printf("\n1.enqueue\n2. dequeue\n3. display\n4. exit\n");
+        scanf("%d",&option);
+        switch(option)
+        {
+            case 1: enqueue();break;
+            case 2: dequeue(); break;
+            case 3: display(); break;
+        }
+    }while(option!=4);
+}
+bool isEmpty()
+{
+    if(front>rear){return true;}
+    else{return false;}
+}
+bool isFull()
+{
+    if(rear==MAX-1){return true;}
+    else{return false;}
+}
+void enqueue()
+{int val;
+   if(!isFull()){
+    printf("enter the value: "); scanf("%d",&val);
+    queue[++rear]=val;
+   }else{
+   printf("queue is full!!");
+   }
+}
+int dequeue()
+{
+    if(!isEmpty())
+    {
+        return queue[front++];
+    }else{
+    printf("there is no element");
+    front=0; rear=-1;
+
+    }
+}
+void display()
+{ int i;
+    printf("the queue is:\n");
+    for(i=front;i<=rear;i++)
+    {
+        printf("%d",queue[i]);
+    }
+}
